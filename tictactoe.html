@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        #board {
+            border: 30px solid rgb(1, 255, 255);
+            width: 500px;
+            height: 460px;
+            border-radius: 20px;
+
+        }
+
+        .row1,
+        .row2,
+        .row3 {
+            background-color: rgb(253, 162, 43);
+            display: flex;
+            flex-direction: row;
+            border: 2px solid #000;
+            height: 150px;
+        }
+
+        .row2,
+        .row3 {
+            border-top: 0;
+        }
+
+        #a1,
+        #a2,
+        #b1,
+        #b2,
+        #c1,
+        #c2 {
+            height: 110px;
+            border-right: 2px solid #000;
+            width: 165px;
+            padding: 20px;
+        }
+
+        #a3,
+        #b3,
+        #c3 {
+            height: 110px;
+            width: 165px;
+            padding: 20px;
+        }
+
+        img {
+            width: 120px;
+            align-self: center;
+        }
+        .close{
+            display: none;
+        }
+        #turnModal, #resultModal{
+            background-color: rgba(255, 255, 255, 0.7);
+            position: absolute;
+            padding: 10px;
+            border: 2px solid rgb(87, 247, 148);
+            border-radius: 20px;
+            text-align: center;
+            width: 30%;
+            align-self: center;
+            justify-self: center;
+        }
+        #turnModal h2{
+            color: rgb(0, 162, 255);
+        }
+        #resultModal h2{
+            color: green;
+        }
+
+        #turnModal button,#resultModal button{
+            width: 20%;
+            background-color: aqua;
+            padding: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #turnModal button:hover,#resultModal button:hover{
+            filter: drop-shadow(0 0 5px rgb(21, 190, 202));
+        }
+        #turnModal button:active, #resultModal button:active{
+            background-color: rgb(19, 172, 172);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="board">
+            <!-- first row  -->
+            <div class="row1">
+                <div id="a1" onclick="addfunc('a1')"></div>
+                <div id="a2" onclick="addfunc('a2')"></div>
+                <div id="a3" onclick="addfunc('a3')"></div>
+            </div>
+            <!-- second row -->
+            <div class="row2">
+                <div id="b1" onclick="addfunc('b1')"></div>
+                <div id="b2" onclick="addfunc('b2')"></div>
+                <div id="b3" onclick="addfunc('b3')"></div>
+            </div>
+            <!-- third row -->
+            <div class="row3">
+                <div id="c1" onclick="addfunc('c1')"></div>
+                <div id="c2" onclick="addfunc('c2')"></div>
+                <div id="c3" onclick="addfunc('c3')"></div>
+            </div>
+        </div>
+        <div id="turnModal" class="close">
+            <h2 id="turnMs"></h2>
+            <button onclick="closeTurn()">Ok</button>
+        </div>
+        <div id="resultModal" class="close">
+            <h2 id="resultMs"></h2>
+            <button onclick="reset()">Ok</button>
+        </div>
+    </div>
+    <script src="tictactoe.js"></script>
+</body>
+
+</html>
